@@ -1,0 +1,17 @@
+.squares {
+  width: 60px;
+  height: 60px;
+  background-color: yellow;
+  margin: 0;
+  border: 1px solid;
+  border-color: black;
+  float: left;
+}
+
+.game {
+  width: 200px;
+  height: 200px;
+  /*display: inline-block;*/
+  /*border: 0px solid;*/
+  padding: 5px;
+}
