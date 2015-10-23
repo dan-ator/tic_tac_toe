@@ -1,36 +1,40 @@
-$(document).ready(function(){
+$(document).ready(function() {
 
-$("body").append("<h1>Tic! Tac! Toe!</h1>");
-$("body").append("<button type='button' class = 'resetButton'>Reset</button>");
-$("body").append("<div class = 'game'> </div>");
+  $("body").append("<h1>Tic! Tac! Toe!</h1>");
+  $("body").append("<button type='button' class = 'resetButton'>Reset</button>");
+  $("body").append("<div class = 'game'> </div>");
 
-
-for (var i = 1; i<=9; i++) {
+  for (var i = 1; i <= 9; i++) {
     var gameBoard = $("<div class= 'squares'> </div>");
     $(".game").append(gameBoard);
   }
 
-var clickcount = 1;
-function markSquare(){
-  console.log("clicked")
-  if (clickcount % 2===0) {
-  $(this).text("x");
-  $(this).off("click");
-  clickcount++;
-} else {
-  $(this).text("o");
-  $(this).off("click");
-  clickcount++;
-}
-}
+  var playerOne = prompt("What is the name of Player 1?");
+  var playerTwo = prompt("What is the name of Player 2?");
 
-$(".squares").on("click", markSquare);
+  var clickCount = 1;
 
-$(".resetButton").on("click", function (){
-  $(".squares").text("");
-  clickcount = 1;
-  $(".squares").off("click");
+  function markSquare() {
+    if (clickCount % 2 === 0) {
+      $(this).text("x");
+      $(this).off("click");
+      clickCount++;
+      alert("Now it is " + playerOne + "'s turn!");
+    } else {
+      $(this).text("o");
+      $(this).off("click");
+      clickCount++;
+      alert("Now it is " + playerTwo + "'s turn!");
+    }
+  }
+
   $(".squares").on("click", markSquare);
-})
+
+  $(".resetButton").on("click", function() {
+    $(".squares").text("");
+    clickCount = 1;
+    $(".squares").off("click");
+    $(".squares").on("click", markSquare);
+  })
 
 })

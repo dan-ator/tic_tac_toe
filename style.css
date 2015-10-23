@@ -11,7 +11,15 @@
 .game {
   width: 200px;
   height: 200px;
-  /*display: inline-block;*/
-  /*border: 0px solid;*/
   padding: 5px;
+}
+
+body {
+  background: rgb(180, 241, 184);
+}
+
+h1 {
+  font-size: 30px;
+  text-align: center;
+  color: rgb(15, 50, 26);
 }
